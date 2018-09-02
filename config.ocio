@@ -13,11 +13,12 @@ ocio_profile_version: 1
 
 search_path: "luts:filmic"
 strictparsing: true
-luma: [0.2126, 0.7152, 0.0722]
+luma: [0.2920, 0.8238, 0.1158]
 
 description: RRT version ut33
 
 roles:
+  # Warning: Adapted for Arri Wide Gamut reference space primaries
   reference: Linear
 
   # Internal scene linear space
@@ -312,10 +313,26 @@ colorspaces:
     allocationvars: [-12.473931188, 12.526068812]
     from_reference: !<GroupTransform>
         children:
+            - !<ColorSpaceTransform> {src: Linear, dst: REC.709 Linear}
             - !<AllocationTransform> {allocation: lg2, vars: [-12.473931188, 12.526068812]}
             - !<FileTransform> {src: filmic_desat65cube.spi3d, interpolation: best}
             - !<AllocationTransform> {allocation: uniform, vars: [0, 0.66]}
     to_reference: !<AllocationTransform> {allocation: lg2, vars: [-12.473931188, 4.026068812], direction: inverse}
+
+  - !<ColorSpace>
+    name: REC.709 Linear
+    family: linear
+    equalitygroup:
+    bitdepth: 32f
+    description: |
+      Arri Wide Gamut to REC.709 based primaries
+    isdata: false
+    allocation: lg2
+    allocationvars: [-12.473931188, 12.526068812]
+    from_reference: !<GroupTransform>
+        children:
+            - !<MatrixTransform> {matrix: [0.638007619283725, 0.214703856337102, 0.097744451430844, 0, 0.291953778999716, 0.823841041510691, -0.115794820510407, 0, 0.00279827903194611, -0.0670342356889595, 1.15329370741689, 0, 0, 0, 0, 1]}																									
+            - !<MatrixTransform> {matrix: [0.41239079926596, 0.357584339383878, 0.180480788401834, 0, 0.21263900587151, 0.715168678767756, 0.0721923153607337, 0, 0.0193308187155918, 0.119194779794626, 0.950532152249661, 0, 0, 0, 0, 1], direction: inverse}																									
 
   - !<ColorSpace>
     name: Filmic sRGB
