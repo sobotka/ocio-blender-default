@@ -53,6 +53,8 @@ displays:
     - !<View> {name: Raw, colorspace: Raw}
     - !<View> {name: Log, colorspace: lg10}
     - !<View> {name: False Color, colorspace: False Color}
+  Arri Wide Gamut:
+    - !<View> {name: Arri LogC, colorspace: Alexa LogC V3 EI 800}
   DCI-P3:
     - !<View> {name: RRT, colorspace: rrt_p3dci}
     - !<View> {name: Film, colorspace: p3dci8}
@@ -70,8 +72,8 @@ displays:
   None:
     - !<View> {name: Default, colorspace: Raw}
 
-active_displays: [sRGB, DCIP3, Rec709, XYZ, None]
-active_views: [Filmic, Default, RRT, Raw, Log]
+active_displays: [sRGB, Arri Wide Gamut, DCIP3, Rec709, XYZ, None]
+active_views: [Filmic, Default, RRT, Raw, Log, Arri LogC]
 
 colorspaces:
   - !<ColorSpace>
@@ -125,6 +127,18 @@ colorspaces:
     allocation: lg2
     allocationvars: [-8.5, 5]
     to_reference: !<FileTransform> {src: rec709_to_aces.spimtx, interpolation: linear, direction: inverse}
+
+  - !<ColorSpace>
+    name: Alexa LogC V3 EI 800
+    family: linear
+    equalitygroup: ""
+    bitdepth: 32f
+    description: |
+      V3 LogC (EI800) - Wide Gamut
+    isdata: false
+    allocation: uniform
+    allocationvars: [0, 1]
+    to_reference: !<FileTransform> {src: V3_LogC_800_to_linear.spi1d, interpolation: linear}
 
   - !<ColorSpace>
     name: rrt_srgb
@@ -364,6 +378,26 @@ colorspaces:
             - !<ColorSpaceTransform> {src: Linear, dst: Filmic Log}
             - !<FileTransform> {src: filmic_false_color.spi3d, interpolation: best}
 looks:
+  - !<Look>
+    name: AlexaV3_int_nite_4300K_2_Rec709_EE_lustre3d
+    process_space: Alexa LogC V3 EI 800
+    transform: !<FileTransform> {src: AlexaV3_int_nite_4300K_2_Rec709_EE_lustre3d.lut, interpolation: tetrahedral}
+
+  - !<Look>
+    name: AlexaV3_int_nite_4300K_1_Rec709_EE_lustre3d.lut
+    process_space: Alexa LogC V3 EI 800
+    transform: !<FileTransform> {src: AlexaV3_int_nite_4300K_1_Rec709_EE_lustre3d.lut, interpolation: tetrahedral}
+
+  - !<Look>
+    name: AlexaV3_day_ext_4300K_1__Rec709_EE_lustre3d.lut
+    process_space: Alexa LogC V3 EI 800
+    transform: !<FileTransform> {src: AlexaV3_int_nite_4300K_1_Rec709_EE_lustre3d.lut, interpolation: tetrahedral}
+
+  - !<Look>
+    name: AlexaV3_day_ext_4300K_2__Rec709_EE_lustre3d.lut
+    process_space: Alexa LogC V3 EI 800
+    transform: !<FileTransform> {src: AlexaV3_day_ext_4300K_2__Rec709_EE_lustre3d.lut, interpolation: tetrahedral}
+
   - !<Look>
     name: Filmic - Very High Contrast
     process_space: Filmic Log
