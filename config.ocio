@@ -81,7 +81,7 @@ colorspaces:
     equalitygroup:
     bitdepth: 32f
     description: |
-      Rec. 709 (Full Range), Blender native linear space
+      Custom Arri Alexa Wide Gamut reference space
     isdata: false
     allocation: lg2
     allocationvars: [-15, 6]
@@ -133,7 +133,7 @@ colorspaces:
     equalitygroup: ""
     bitdepth: 32f
     description: |
-      V3 LogC (EI800) - Wide Gamut
+      V3 LogC (EI160) - Wide Gamut
     isdata: false
     allocation: uniform
     allocationvars: [0, 1]
@@ -145,7 +145,7 @@ colorspaces:
     equalitygroup: ""
     bitdepth: 32f
     description: |
-      V3 LogC (EI800) - Wide Gamut
+      V3 LogC (EI200) - Wide Gamut
     isdata: false
     allocation: uniform
     allocationvars: [0, 1]
@@ -157,7 +157,7 @@ colorspaces:
     equalitygroup: ""
     bitdepth: 32f
     description: |
-      V3 LogC (EI800) - Wide Gamut
+      V3 LogC (EI250) - Wide Gamut
     isdata: false
     allocation: uniform
     allocationvars: [0, 1]
@@ -169,7 +169,7 @@ colorspaces:
     equalitygroup: ""
     bitdepth: 32f
     description: |
-      V3 LogC (EI800) - Wide Gamut
+      V3 LogC (EI320) - Wide Gamut
     isdata: false
     allocation: uniform
     allocationvars: [0, 1]
@@ -181,7 +181,7 @@ colorspaces:
     equalitygroup: ""
     bitdepth: 32f
     description: |
-      V3 LogC (EI800) - Wide Gamut
+      V3 LogC (EI400) - Wide Gamut
     isdata: false
     allocation: uniform
     allocationvars: [0, 1]
@@ -193,7 +193,7 @@ colorspaces:
     equalitygroup: ""
     bitdepth: 32f
     description: |
-      V3 LogC (EI800) - Wide Gamut
+      V3 LogC (EI500) - Wide Gamut
     isdata: false
     allocation: uniform
     allocationvars: [0, 1]
@@ -205,7 +205,7 @@ colorspaces:
     equalitygroup: ""
     bitdepth: 32f
     description: |
-      V3 LogC (EI800) - Wide Gamut
+      V3 LogC (EI640) - Wide Gamut
     isdata: false
     allocation: uniform
     allocationvars: [0, 1]
@@ -244,7 +244,7 @@ colorspaces:
     equalitygroup: ""
     bitdepth: 32f
     description: |
-      V3 LogC (EI800) - Wide Gamut
+      V3 LogC (EI1000) - Wide Gamut
     isdata: false
     allocation: uniform
     allocationvars: [0, 1]
@@ -256,7 +256,7 @@ colorspaces:
     equalitygroup: ""
     bitdepth: 32f
     description: |
-      V3 LogC (EI800) - Wide Gamut
+      V3 LogC (EI1280) - Wide Gamut
     isdata: false
     allocation: uniform
     allocationvars: [0, 1]
@@ -268,7 +268,7 @@ colorspaces:
     equalitygroup: ""
     bitdepth: 32f
     description: |
-      V3 LogC (EI800) - Wide Gamut
+      V3 LogC (EI1600) - Wide Gamut
     isdata: false
     allocation: uniform
     allocationvars: [0, 1]
@@ -280,7 +280,7 @@ colorspaces:
     equalitygroup: ""
     bitdepth: 32f
     description: |
-      V3 LogC (EI800) - Wide Gamut
+      V3 LogC (EI2000) - Wide Gamut
     isdata: false
     allocation: uniform
     allocationvars: [0, 1]
@@ -292,7 +292,7 @@ colorspaces:
     equalitygroup: ""
     bitdepth: 32f
     description: |
-      V3 LogC (EI800) - Wide Gamut
+      V3 LogC (EI2560) - Wide Gamut
     isdata: false
     allocation: uniform
     allocationvars: [0, 1]
@@ -304,7 +304,7 @@ colorspaces:
     equalitygroup: ""
     bitdepth: 32f
     description: |
-      V3 LogC (EI800) - Wide Gamut
+      V3 LogC (EI3200) - Wide Gamut
     isdata: false
     allocation: uniform
     allocationvars: [0, 1]
