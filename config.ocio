@@ -236,7 +236,7 @@ colorspaces:
     from_reference: !<GroupTransform>
       children:
         - !<ColorSpaceTransform> {src: Linear, dst: REC.709 Linear}
-        - !<FileTransform> {src: V3_LogC_800_to_linear.spi1d, interpolation: linear}
+        - !<FileTransform> {src: V3_LogC_800_to_linear.spi1d, interpolation: linear, direction: inverse}
     
   - !<ColorSpace>
     name: Alexa LogC V3 EI 1000
