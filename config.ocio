@@ -233,7 +233,7 @@ colorspaces:
     isdata: false
     allocation: uniform
     allocationvars: [0, 1]
-    to_reference: !<GroupTransform>
+    from_reference: !<GroupTransform>
       children:
         - !<ColorSpaceTransform> {src: Linear, dst: REC.709 Linear}
         - !<FileTransform> {src: V3_LogC_800_to_linear.spi1d, interpolation: linear}
